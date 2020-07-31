@@ -38,16 +38,17 @@ router.post("/create",async(req, res)=>{
 	}
 });
 
+
 router.post("/login", async(req, res)=>{
-	UserModel.findOne({'userName':req.body.username},(req, user) => {
-		if(!user){
-			res.status(401).send("User Doesn't Exists")
-		}else if (!user.validPassword(req.body.password)){
-			res.status(401).send("Wrong Password")
-		}else{
-			res.json({"status":"Login Successful","authenticated":true});
-		}
-	});
+	const reqUser = await UserModel.findOne({'userName':req.body.username})
+	if(!reqUser){
+		res.status(401).send({"status":"User Doesn't Exists","authenticated":false})
+	}else if (!reqUser.validPassword(req.body.password)){
+		res.status(401).send({"status":"Wrong Password","authenticated":false})
+	}else{
+		res.json({"status":"Login Successful","authenticated":true});
+	}
+
 });
 
 
