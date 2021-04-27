@@ -3,15 +3,14 @@
     'name': "partner_product",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Partner product relation""",
 
     'description': """
-        Long description of module's purpose
+        The module to check how many products are sold to which customer
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Trimis Tech",
+    'website': "",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -20,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','stock','sale_management'],
 
     # always loaded
     'data': [
