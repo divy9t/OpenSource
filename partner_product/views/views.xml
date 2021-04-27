@@ -15,7 +15,7 @@
 
 
         <record model="ir.actions.act_window" id="partner_product_action_window">
-            <field name="name">partner_product window</field>
+            <field name="name">Product Partner Relation</field>
             <field name="res_model">partner_product.partner_product</field>
             <field name="view_mode">tree</field>
         </record>
